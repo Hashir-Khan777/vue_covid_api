@@ -34,15 +34,22 @@
       </tbody>
     </table>
   </div>
-  <div v-if="loading" class="loading"><h2>Loading...</h2></div>
+  <div v-if="loading" class="loading">
+    <HelloWorld msg="Loading..." />
+  </div>
   <div v-if="error" class="loading">
-    <p>{{ error }}</p>
+    <HelloWorld :msg="error" />
   </div>
 </template>
 
 <script>
+import HelloWorld from "./components/HelloWorld.vue";
 export default {
   name: "App",
+
+  components: {
+    HelloWorld,
+  },
 
   computed: {
     loading() {
