@@ -63,8 +63,14 @@ export default {
     },
   },
 
+  methods: {
+    getCases() {
+      this.$store.dispatch("getCovidCases");
+    },
+  },
+
   beforeMount() {
-    this.$store.dispatch("getCovidCases");
+    this.getCases();
   },
 };
 </script>
